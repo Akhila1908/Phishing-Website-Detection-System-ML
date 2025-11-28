@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing URL Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background: white;
+            padding: 25px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #0984e3;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #74b9ff;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🔍 Phishing URL Detector</h2>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL here..." required>
+        <br>
+        <button type="submit">Check URL</button>
+    </form>
+
+    {% if predict %}
+    <div class="result">
+        {{ predict }}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
